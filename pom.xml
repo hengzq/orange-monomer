@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.hengzq.orange</groupId>
+        <artifactId>orange-dependencies-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>orange-monomer</artifactId>
+    <name>${project.artifactId}</name>
+    <version>${revision}</version>
+    <packaging>jar</packaging>
+
+    <description>
+        单体架构版
+    </description>
+
+    <properties>
+        <revision>0.0.1-SNAPSHOT</revision>
+    </properties>
+
+
+    <dependencies>
+        <!-- AI 大模型依赖 -->
+        <dependency>
+            <groupId>cn.hengzq.orange</groupId>
+            <artifactId>orange-ai-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- 日志记录依赖-->
+        <dependency>
+            <groupId>cn.hengzq.orange</groupId>
+            <artifactId>orange-system-log-biz-starter</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- 系统模块依赖 -->
+        <dependency>
+            <groupId>cn.hengzq.orange</groupId>
+            <artifactId>orange-system-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- 封装后的WebMvc以来引入 -->
+        <dependency>
+            <groupId>cn.hengzq.orange</groupId>
+            <artifactId>orange-starter-webmvc</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- security 依赖-->
+        <dependency>
+            <groupId>cn.hengzq.orange</groupId>
+            <artifactId>orange-starter-security</artifactId>
+        </dependency>
+
+        <!--  ai流式响应依赖      -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <!-- 打包 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal> <!-- 将引入的 jar 打入其中 -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

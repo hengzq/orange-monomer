@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ORANGE-MONOMER-V1
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: dev
+
+mybatis-plus:
+  global-config:
+    banner: false
+
+
