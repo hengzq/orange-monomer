@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.hengzq.orange</groupId>
         <artifactId>orange-dependencies-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.5-SNAPSHOT</version>
     </parent>
 
     <artifactId>orange-monomer</artifactId>
@@ -20,7 +20,7 @@
     </description>
 
     <properties>
-        <revision>0.0.1-SNAPSHOT</revision>
+        <revision>0.0.5-SNAPSHOT</revision>
     </properties>
 
 
