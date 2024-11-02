@@ -28,7 +28,10 @@ spring:
     ollama:
       base-url: http://127.0.0.1:11434
     zhipuai: # 智谱AI API-KEY
-      api-key: 861f36123xxxx3ffa27f36a73f6246.TNsgggeesl2jec1
+      api-key: 861f3678c5dc221ffa27f36a73f6246.TNsFM7hcYsl2jec1
+    tencent:
+      secret-id: xxxxxx
+      secret-key: xxxxxx
 
 orange:
   swagger: # swagger 配置文件
@@ -37,4 +40,8 @@ orange:
   system:
     log:
       enabled: true
+  security:
+    white-list-url:
+      - /orange-ai/v1.0/chat/conversation-stream
+      - /orange-system/v1.0/auth/password-encrypt
 debug: true

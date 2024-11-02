@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.hengzq.orange</groupId>
         <artifactId>orange-dependencies-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     </parent>
 
     <artifactId>orange-monomer</artifactId>
@@ -20,7 +20,7 @@
     </description>
 
     <properties>
-        <revision>1.0.0</revision>
+        <revision>1.1.0</revision>
     </properties>
 
 
@@ -59,10 +59,10 @@
             <artifactId>orange-starter-security</artifactId>
         </dependency>
 
-        <!--  ai流式响应依赖      -->
+        <!--  ai流式响应依赖  -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
         </dependency>
     </dependencies>
 
