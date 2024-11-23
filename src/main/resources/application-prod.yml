@@ -33,6 +33,9 @@ spring:
     tencent:
       secret-id: xxxxxx
       secret-key: xxxxxx
+    qianfan:
+      api-key: xxxxxx
+      secret-key: xxxxxx
 
 orange:
   swagger: # swagger 配置文件
@@ -41,6 +44,16 @@ orange:
   system:
     log:
       enabled: true
+    storage:
+      local:
+        enabled: false
+      aliyun:
+        enabled: true
+        domain: https://orange-prod.oss-cn-chengdu.aliyuncs.com
+        end-point: oss-cn-chengdu.aliyuncs.com
+        bucket-name: orange
+        access-key-id: xxxxxx
+        access-key-secret: xxxxxx
   security:
     white-list-url:
       - /orange-ai/v1.0/chat/conversation-stream
