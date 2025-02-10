@@ -57,6 +57,8 @@ orange:
     white-list-url:
       - /orange-ai/v1.0/chat/conversation-stream
       - /orange-system/v1.0/auth/password-encrypt
-
+  ai:
+    deep-seek:
+      token: sk-xxxxx
 
 debug: true
