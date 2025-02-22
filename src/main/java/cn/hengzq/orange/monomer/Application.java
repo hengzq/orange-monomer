@@ -1,6 +1,7 @@
 package cn.hengzq.orange.monomer;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.ai.autoconfigure.vectorstore.redis.RedisVectorStoreAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -11,7 +12,10 @@ import java.net.UnknownHostException;
 
 
 @Slf4j
-@SpringBootApplication(scanBasePackages = {"cn.hengzq.orange"})
+@SpringBootApplication(
+        scanBasePackages = {"cn.hengzq.orange"},
+        exclude = {RedisVectorStoreAutoConfiguration.class}
+)
 public class Application {
 
     public static void main(String[] args) {
@@ -27,7 +31,7 @@ public class Application {
             String port = env.getProperty("server.port");
             String name = env.getProperty("spring.application.name");
             log.info("""
-                            
+                                                        
                             --------------------------------------------------------------------
                             Application {} is running! Access URLs:
                             Local: \t\t\thttp://localhost:{}/

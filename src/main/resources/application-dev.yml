@@ -35,6 +35,10 @@ spring:
     qianfan:
       api-key: xxxxxx
       secret-key: xxxxxx
+  data:
+    redis:
+      host: redis-server
+      port: 6379
 
 orange:
   swagger: # swagger 配置文件
