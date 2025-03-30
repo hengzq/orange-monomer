@@ -1,9 +1,6 @@
-server:
-  port: 80
-
 spring:
   datasource:
-    url: jdbc:mysql://mysql-server:3306/orange?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://mysql-server:3306/orange?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -36,10 +33,6 @@ spring:
     qianfan:
       api-key: xxxxxx
       secret-key: xxxxxx
-  data:
-    redis:
-      host: redis-server
-      port: 6379
 
 orange:
   swagger: # swagger 配置文件
