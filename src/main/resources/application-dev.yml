@@ -33,7 +33,10 @@ spring:
     qianfan:
       api-key: xxxxxx
       secret-key: xxxxxx
-
+    vectorstore:
+      milvus:
+        client:
+          host: milvus-server
 orange:
   swagger: # swagger 配置文件
     enabled: true
