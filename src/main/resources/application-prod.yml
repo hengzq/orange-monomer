@@ -19,20 +19,7 @@ spring:
     filters: stat,config
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     useGlobalDataSourceStat: true
-
   ai:
-    dashscope: # 阿里云API-KEY
-      api-key: sk-713296571e144e2dbbxxxeeeeesssa
-    ollama:
-      base-url: http://127.0.0.1:11434
-    zhipuai: # 智谱AI API-KEY
-      api-key: 861f3678c5dc221ffa27f36a73f6246.TNsFM7hcYsl2jec1
-    tencent:
-      secret-id: xxxxxx
-      secret-key: xxxxxx
-    qianfan:
-      api-key: xxxxxx
-      secret-key: xxxxxx
     vectorstore:
       milvus:
         client:
@@ -56,8 +43,7 @@ orange:
         access-key-secret: xxxxxx
   security:
     white-list-url:
-      - /orange-ai/v1.0/chat/conversation-stream
       - /orange-system/v1.0/auth/password-encrypt
-  ai:
-    deep-seek:
-      token: sk-xxxxx
+      - /orange-ai/v1.0/chat/conversation-stream
+      - /orange-ai/v1.0/chat/agent-conversation-stream
+      - /orange-ai/v1.0/agent/conversation
