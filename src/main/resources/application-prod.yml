@@ -45,5 +45,4 @@ orange:
     white-list-url:
       - /orange-system/v1.0/auth/password-encrypt
       - /orange-ai/v1.0/chat/conversation-stream
-      - /orange-ai/v1.0/chat/agent-conversation-stream
-      - /orange-ai/v1.0/agent/conversation
+      - /orange-ai/v1.0/apps/conversation-stream

@@ -16,8 +16,6 @@ SET @t_id := '-100';
 -- 默认角色ID
 SET @r_id := '-100';
 
-BEGIN;
-
 -- ----------------------------
 -- 预置部门数据
 -- ----------------------------
@@ -36,7 +34,7 @@ where id = @u_id;
 
 INSERT INTO sys_user (id, tenant_id, name, email, gender, phone, login_account, login_password, created_by)
 VALUES (@u_id, @t_id, '系统管理员', 'hengzq@yeah.net', '1', '17629990001', 'admin',
-        '$2a$18$6Ora//VZ//HxnI64lNWYXOZx4Qp47M9.vQG72jx7u4BwGGdQquLaG', @u_id);
+        '$2a$10$sR9poTJBdxX/odC6Cu1Pxeks3DI/MwcRNyOoP4fwrSH8HM1GAbH/i', @u_id);
 
 -- ----------------------------
 -- 角色预置信息

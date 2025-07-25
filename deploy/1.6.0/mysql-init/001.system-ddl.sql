@@ -246,7 +246,7 @@ CREATE TABLE IF NOT EXISTS sys_login_log
     `user_agent`    varchar(128)         DEFAULT '' COMMENT 'User-Agent',
     `login_time`    datetime    NOT NULL COMMENT '登录时间',
     `status`        tinyint(1)           DEFAULT 0 COMMENT '登录状态（0成功 1失败）',
-    `created_by`    varchar(36) NOT NULL COMMENT '创建人',
+    `created_by`    varchar(36)          DEFAULT NULL COMMENT '创建人',
     `created_at`    datetime    NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `updated_by`    varchar(36)          DEFAULT NULL COMMENT '更新人',
     `updated_at`    datetime    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',

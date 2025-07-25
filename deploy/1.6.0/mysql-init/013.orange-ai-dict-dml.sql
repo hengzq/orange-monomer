@@ -87,6 +87,50 @@ VALUES (100300, @t_id, 1, '解析中', 'PARSING', 'ai_knowledge_doc_status', 1, 
 ;
 
 
+
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--  MCP SERVER 传输协议  ai_mcp_server_transport_protocol      type ID范围 [1004]  data ID范围 [100400 - 100500）
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- 新增字典类型
+INSERT INTO sys_dict_type (id, tenant_id, name, dict_type, enabled, preset, description, created_by)
+VALUES (1004, @t_id, 'AI - MCP SERVER 传输协议', 'ai_mcp_server_transport_protocol', 1, 1, 'AI - MCP SERVER 传输协议', @u_id);
+
+-- 新增字典数据
+INSERT INTO sys_dict_data (id, tenant_id, sort, dict_label, dict_value, dict_type, preset, show_style, enabled, description, created_by)
+VALUES (100400, @t_id, 1, 'SSE', 'SSE', 'ai_mcp_server_transport_protocol', 1, '#409eff', 1, 'SSE', @u_id)
+;
+
+
+
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--  应用类型  ai_app_type      type ID范围 [1005]  data ID范围 [100500 - 100600）
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- 新增字典类型
+INSERT INTO sys_dict_type (id, tenant_id, name, dict_type, enabled, preset, description, created_by)
+VALUES (1005, @t_id, 'AI - 应用类型', 'ai_app_type', 1, 1, 'AI - 应用类型', @u_id);
+
+-- 新增字典数据
+INSERT INTO sys_dict_data (id, tenant_id, sort, dict_label, dict_value, dict_type, preset, show_style, enabled, description, created_by)
+VALUES (100500, @t_id, 1, '智能体', 'AGENT', 'ai_app_type', 1, '#409eff', 1, 'AGENT', @u_id)
+#        (100501, @t_id, 1, '对话流', 'CHAT_FLOW', 'ai_app_type', 1, '#409eff', 1, 'CHAT_FLOW', @u_id),
+#        (100502, @t_id, 1, '工作流', 'WORK_FLOW', 'ai_app_type', 1, '#409eff', 1, 'WORK_FLOW', @u_id)
+;
+
+
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--  应用类型  ai_app_status      type ID范围 [1006]  data ID范围 [100600 - 100700）
+-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- 新增字典类型
+INSERT INTO sys_dict_type (id, tenant_id, name, dict_type, enabled, preset, description, created_by)
+VALUES (1006, @t_id, 'AI - 应用类型', 'ai_app_status', 1, 1, 'AI - 应用状态', @u_id);
+
+-- 新增字典数据
+INSERT INTO sys_dict_data (id, tenant_id, sort, dict_label, dict_value, dict_type, preset, show_style, enabled, description, created_by)
+VALUES (100600, @t_id, 1, '草稿', 'DRAFT', 'ai_app_status', 1, '#0003', 1, '草稿', @u_id),
+       (100601, @t_id, 1, '已发布', 'PUBLISHED', 'ai_app_status', 1, '#5cb300', 1, '已发布', @u_id),
+       (100602, @t_id, 1, '已发布编辑中', 'PUBLISHED_EDITING', 'ai_app_status', 1, '#409eff', 1, '已发布编辑中', @u_id)
+;
+
 COMMIT;
 
 

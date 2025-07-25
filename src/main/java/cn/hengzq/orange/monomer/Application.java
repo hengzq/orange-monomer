@@ -29,7 +29,6 @@ public class Application {
             String port = env.getProperty("server.port");
             String name = env.getProperty("spring.application.name");
             log.info("""
-                                                        
                             --------------------------------------------------------------------
                             Application {} is running! Access URLs:
                             Local: \t\t\thttp://localhost:{}/

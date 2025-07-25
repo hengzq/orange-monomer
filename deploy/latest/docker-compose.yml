@@ -1,0 +1,68 @@
+services:
+  mysql-server:
+    image: mysql:8.0
+    container_name: mysql8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: orange
+      LANG: C.UTF-8
+      MYSQL_CHARSET: utf8mb4
+      TZ: Asia/Shanghai
+    command: [
+      '--character-set-server=utf8mb4'
+    ]
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d  # 初始化SQL脚本
+    networks:
+      - orange_net
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+  milvus-server:
+    image: milvusdb/milvus:v2.5.6
+    container_name: milvus-server
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    command: [ "milvus", "run", "standalone" ]
+    environment:
+      COMMON_STORAGETYPE: local
+      ETCD_USE_EMBED: true
+      ETCD_DATA_DIR: /var/lib/milvus/etcd
+    networks:
+      - orange_net
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9091/healthz" ]
+      interval: 30s
+      start_period: 90s
+      timeout: 20s
+      retries: 3
+  orange-monomer:
+    image: registry.cn-wulanchabu.aliyuncs.com/hengzq/orange-monomer:latest
+    container_name: orange-monomer
+    ports:
+      - "8080:8080"
+    networks:
+      - orange_net
+    depends_on:
+      - mysql-server
+      - milvus-server
+  orange-tiny-vue3-ui:
+    image: registry.cn-wulanchabu.aliyuncs.com/hengzq/orange-tiny-vue3-ui:latest
+    container_name: orange-tiny-vue3-ui
+    ports:
+      - "80:80"
+    depends_on:
+      - orange-monomer
+    networks:
+      - orange_net
+
+
+networks:
+  orange_net:
+    driver: bridge
+
