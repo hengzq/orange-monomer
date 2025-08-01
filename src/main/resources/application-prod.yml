@@ -46,3 +46,5 @@ orange:
       - /orange-system/v1.0/auth/password-encrypt
       - /orange-ai/v1.0/chat/conversation-stream
       - /orange-ai/v1.0/apps/conversation-stream
+      - /sse
+      - /mcp/message
