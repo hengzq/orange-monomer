@@ -42,7 +42,7 @@ services:
       timeout: 20s
       retries: 3
   orange-monomer:
-    image: registry.cn-wulanchabu.aliyuncs.com/hengzq/orange-monomer:latest
+    image: registry.cn-wulanchabu.aliyuncs.com/hengzq/orange-monomer:1.7.0
     container_name: orange-monomer
     ports:
       - "8080:8080"
@@ -52,7 +52,7 @@ services:
       - mysql-server
       - milvus-server
   orange-tiny-vue3-ui:
-    image: registry.cn-wulanchabu.aliyuncs.com/hengzq/orange-tiny-vue3-ui:latest
+    image: registry.cn-wulanchabu.aliyuncs.com/hengzq/orange-tiny-vue3-ui:1.7.0
     container_name: orange-tiny-vue3-ui
     ports:
       - "80:80"
