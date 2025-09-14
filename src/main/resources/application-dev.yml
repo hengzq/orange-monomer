@@ -19,6 +19,12 @@ spring:
     filters: stat,config
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     useGlobalDataSourceStat: true
+  cache:
+    type: redis
+  data:
+    redis:
+      host: redis-server
+      port: 56379
   ai:
     vectorstore:
       milvus:
